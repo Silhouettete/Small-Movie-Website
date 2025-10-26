@@ -49,7 +49,9 @@ export default async function Movie({
               )}
 
               <div className="text-center mt-2">
-                <h4 className="font-bold">{person.name}</h4>
+                <h4 className="font-bold">
+                  <Link href={`/person/${person.id}`}>{person.name}</Link>
+                </h4>
                 {person.character ? (
                   <span className="text-grey-600">({person.character})</span>
                 ) : (
