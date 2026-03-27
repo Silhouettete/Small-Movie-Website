@@ -1,6 +1,6 @@
+"use client";
 import Movie from "@/components/movie";
 import type { MovieType } from "@/types/global";
-import { useSearchParams } from "next/navigation";
 
 async function searchMovie(q: string): Promise<MovieType[]> {
   const res = await fetch(
@@ -9,7 +9,7 @@ async function searchMovie(q: string): Promise<MovieType[]> {
       headers: {
         Authorization: `Bearer ${process.env.TMDB_KEY}`,
       },
-    }
+    },
   );
 
   const data = await res.json();
